@@ -103,7 +103,7 @@ function updateMemoryError() {
 function deleteMemorySuccess(json) {
   var memory = json;
   console.log(json);
-  var memoryId = memories._id;
+  var memoryId = memory._id;
   console.log('delete memory', memoryId);
 
   for(var i = 0; i < allmemories.length; i++) {

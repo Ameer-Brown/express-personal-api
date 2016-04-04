@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
  * DATABASE *
  ************/
 
-// var db = require('./models');
+var db = require('./models');
 
 /**********
  * ROUTES *
@@ -29,7 +29,6 @@ app.get('/', function homepage(req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
 
-
 /*
  * JSON API Endpoints
  */
@@ -45,12 +44,32 @@ app.get('/api', function api_index(req, res) {
       {method: "GET", path: "/api", description: "Leads to all Endpoints"},
       {method: "GET", path: "/api/profile", description: "Data about Ameer"},
       {method: "POST", path: "/api/memories", description: "Log your funniest memory with me."},
-      {method: "PUT", path: "/api/memories/name", description: "Update your funniest memory with me."},
-      {method: "GET", path: "/api/memories/name", description: "Find your funniest memory with me."},
-      {method: "Delete", path: "/api/memories/name", description: "Delete your funniest memory with me."}
+      {method: "PUT", path: "/api/memories/_id", description: "Update your funniest memory with me."},
+      {method: "GET", path: "/api/memories/_id", description: "Find your funniest memory with me."},
+      {method: "Delete", path: "/api/memories/_id", description: "Delete your funniest memory with me."}
     ]
   });
 });
+// 
+// app.get('/api/profile', function apiProfile(req, res) {
+//   res.();
+// });
+//
+// app.post('/api/memories', function api_memoriesMake(req, res) {
+//   res.();
+// });
+//
+// app.put('/api/memories/_id', function apiMemoriesUpdate(req, res) {
+//   res.();
+// });
+//
+// app.get('/api/memories/_id', function apiMemoriesID(req, res) {
+//   res.();
+// });
+//
+// app.delete('/api/memories/_id', function apiMemoriesDel(req, res) {
+//   res.();
+// });
 
 /**********
  * SERVER *
