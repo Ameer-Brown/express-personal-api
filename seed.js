@@ -3,21 +3,6 @@
 
 var db = require('./models');
 
-var new_memory = {_id: 1,
-                  name: 'Tony',
-                funniest_memory: 'Ran From Neighbors Dog',
-              };
-
-db.Memory.create(new_memory, function(err, memory){
-   if (err){ return console.log('err', err); }
-    else {
-  console.log("Created new memory");
-  }
-});
-
-  process.exit(); // we're all done! Exit the program.
-});
-
 var profile = [
                     {name: "Ameer Brown"},
 
@@ -35,3 +20,18 @@ var profile = [
 
 
                     ];
+
+var new_memory = {_id: 1,
+                  name: 'Tony',
+                funniest_memory: 'Ran From Neighbors Dog',
+              };
+
+db.Memory.create(new_memory, function(err, memory){
+   if (err){ return console.log('err', err); }
+    else {
+  console.log("Created new memory");
+  }
+});
+
+  process.exit(); // we're all done! Exit the program.
+});
