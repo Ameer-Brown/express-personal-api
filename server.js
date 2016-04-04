@@ -37,16 +37,19 @@ app.get('/', function homepage(req, res) {
 app.get('/api', function api_index(req, res) {
   // TODO: Document all your api endpoints below
   res.json({
-    woops_i_has_forgot_to_document_all_my_endpoints: true, // CHANGE ME ;)
-    message: "Welcome to my personal api! Here's what you need to know!",
-    documentation_url: "https://github.com/example-username/express_self_api/README.md", // CHANGE ME
-    base_url: "http://YOUR-APP-NAME.herokuapp.com", // CHANGE ME
+    woops_i_has_forgot_to_document_all_my_endpoints: false, // CHANGE ME ;)
+    message: "Welcome to my personal api! I hope my documentation is better than mongoose's!",
+    documentation_url: "https://github.com/example-username/express_self_api/APIREADME.md",
+    base_url: "http://strawberry-shortcake-56992.herokuapp.com", // CHANGE ME
     endpoints: [
-      {method: "GET", path: "/api", description: "Describes all available endpoints"},
-      {method: "GET", path: "/api/profile", description: "Data about me"}, // CHANGE ME
-      {method: "POST", path: "/api/campsites", description: "E.g. Create a new campsite"} // CHANGE ME
+      {method: "GET", path: "/api", description: "Leads to all Endpoints"},
+      {method: "GET", path: "/api/profile", description: "Data about Ameer"},
+      {method: "POST", path: "/api/memories", description: "Log your funniest memory with me."},
+      {method: "PUT", path: "/api/memories/name", description: "Update your funniest memory with me."},
+      {method: "GET", path: "/api/memories/name", description: "Find your funniest memory with me."},
+      {method: "Delete", path: "/api/memories/name", description: "Delete your funniest memory with me."}
     ]
-  })
+  });
 });
 
 /**********
