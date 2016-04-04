@@ -97,7 +97,6 @@ app.post('/api/memories', function (req, res) {
 // });
 //
 app.delete('/api/memories/_id', function apiMemoriesDel(req, res) {
-    // get book id from url params (`req.params`)
     console.log(req.params);
     var bookId = req.params.id;
 
