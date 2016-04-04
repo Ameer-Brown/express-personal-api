@@ -39,7 +39,7 @@ app.get('/api', function api_index(req, res) {
   res.json({
     woops_i_has_forgot_to_document_all_my_endpoints: false, // CHANGE ME ;)
     message: "Welcome to my personal api! I hope my documentation is better than mongoose's!",
-    documentation_url: "https://github.com/Ameer-Brown/express_self_api/APIREADME.md",
+    documentation_url: "https://github.com/Ameer-Brown/express-personal-api/APIREADME.md",
     base_url: "http://strawberry-shortcake-56992.herokuapp.com", // CHANGE ME
     endpoints: [
       {method: "GET", path: "/api", description: "Leads to all Endpoints"},
