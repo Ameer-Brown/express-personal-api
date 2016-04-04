@@ -54,14 +54,39 @@ app.get('/api', function api_index(req, res) {
     ]
   });
 });
-//
-// app.get('/api/profile', function apiProfile(req, res) {
-//   res.();
-// });
-//
-// app.post('/api/memories', function api_memoriesMake(req, res) {
-//   res.();
-// });
+
+app.get('/api/profile', function apiProfile(req, res) {
+  db.Profile.find({})
+      .exec(function(err, profile){
+        if (err) {
+          res.status(500).send(err);
+          return;
+        }
+        res.json(profile);
+      });
+});
+
+app.post('/api/memories', function (req, res) {
+  var newMemory = new db.Memory({
+    _id: req.body.id,
+    name: req.body.name,
+    funniest_memory: req.body.funniest_memory,
+  });
+  db.Memory.findOne({name: req.body.name}, function(err, author){
+    if (err) {
+      return console.log(err);
+    }
+    newMemory.name = name;
+    newMemory.save(function(err, book){
+      if (err) {
+        return console.log("save error: " + err);
+      }
+      console.log("saved ", memory.name);
+      res.json(memory);
+    });
+  });
+});
+
 //
 // app.put('/api/memories/_id', function apiMemoriesUpdate(req, res) {
 //   res.();
@@ -71,9 +96,16 @@ app.get('/api', function api_index(req, res) {
 //   res.();
 // });
 //
-// app.delete('/api/memories/_id', function apiMemoriesDel(req, res) {
-//   res.();
-// });
+app.delete('/api/memories/_id', function apiMemoriesDel(req, res) {
+    // get book id from url params (`req.params`)
+    console.log(req.params);
+    var bookId = req.params.id;
+
+    db.Memory.findOneAndRemove({ _id: memoryId }, function (err, deletedMemory) {
+      res.json(deletedMemory);
+    });
+  });
+});
 
 /**********
  * SERVER *
