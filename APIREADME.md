@@ -27,21 +27,12 @@ GET /api/profile            {
 POST /api/memories           [
                              {
                                 _id: 1,
-                                your_name: 'Tony',
+                                name: 'Tony',
                                 funniest_memory: 'Ran From Neighbors Dog',
                              },
                             ]
 
-PUT /api/memories/name           [
-                             {
-                                _id: 1,
-                                your_name: 'Tony',
-                                funniest_memory: 'Ran From Neighbors Dog',
-                             },
-                            ]
-
-
-GET /api/memories/name          [
+PUT /api/memories/_id           [
                              {
                                 _id: 1,
                                 name: 'Tony',
@@ -49,7 +40,16 @@ GET /api/memories/name          [
                              },
                             ]
 
-DELETE /api/memories/name          [
+
+GET /api/memories/_id          [
+                             {
+                                _id: 1,
+                                name: 'Tony',
+                                funniest_memory: 'Ran From Neighbors Dog',
+                             },
+                            ]
+
+DELETE /api/memories/_id          [
                              {
                                 _id: 1,
                                 name: 'Tony',
