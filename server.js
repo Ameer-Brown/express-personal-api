@@ -105,7 +105,7 @@ app.delete('/api/memories/_id', function apiMemoriesDel(req, res) {
       res.json(deletedMemory);
     });
   });
-});
+
 
 /**********
  * SERVER *
