@@ -3,17 +3,18 @@
 
 var db = require('./models');
 
-var new_memory = [{_id: memories._id,
-                  name: memories.name,
-                funniest_memory: memories.funniest_memory,
-              }];
+var new_memory = {_id: 1,
+                  name: 'Tony',
+                funniest_memory: 'Ran From Neighbors Dog',
+              };
 
 db.Memory.create(new_memory, function(err, memory){
-   if (err){
-    return console.log("Error:", err);
+   if (err){ return console.log('err', err); }
+    else {
+   console.log('removed all books');
   }
-
-  console.log("Created new memory", memory._id);
+});
+  console.log("Created new memory");
   process.exit(); // we're all done! Exit the program.
 });
 
